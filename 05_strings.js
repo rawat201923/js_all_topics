@@ -7,7 +7,7 @@ console.log(name + repoCount + " Value")
 
 console.log(`Hello, My name is ${name} and my repo count is ${repoCount}`);
 
-const gameName = new String('hitesh-hc');
+const gameName = new String('hitesh-hc');  //to get all objects of strings
 console.log(gameName[0])
 console.log(gameName.length)
 console.log(gameName.toUpperCase())
