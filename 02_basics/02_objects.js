@@ -1,0 +1,70 @@
+////// singleton
+// object.create  using to create object in constructors
+//object literals
+ const mysyb = Symbol("key1")
+
+const jsuser = {
+    name : "himani",
+    "full name" : "himani rawat",
+[mysyb] : "key1", // symbol delaration
+    age:20,
+    location:"jaipur",
+    email : "himansi@gmail.com",
+    isLoggedIn:false,
+    lastLoginDays:["monday","saturday"]
+}
+
+
+// console.log(jsuser.email)          // first way to access
+// console.log(jsuser["email"])        //second way to access
+// console.log(jsuser["full name"])          // first way to access
+// console.log(jsuser[mysyb])  
+
+jsuser.email = "himi@gmail.com";
+// Object.freeze(jsuser)
+jsuser.email = "himani@google.com"
+// console.log(jsuser)
+
+jsuser.greeting = function(){
+    console.log("hello js user");
+}
+jsuser.greetingTwo = function(){
+    console.log(`hello js user, ${this.name}`);
+}
+// console.log(jsuser.greeting)
+// console.log(jsuser.greeting())
+// console.log(jsuser.greetingTwo())
+
+
+/********objects part 2*********************/
+// objects declared by constructors or singleton
+
+// const tinderUser = new Object();
+const tinderUser = {}
+
+tinderUser.id = "123jdjsd"
+tinderUser.name="sammy"
+tinderUser.isLoggedIn =  false
+
+// console.log(tinderUser)
+
+const regularUser = {
+    email:"himni@gmail.com",
+    fullname: {
+        userfullname:{
+            firstname: "hiamni",
+            lastname:"rawat"
+
+        }
+    }
+
+}
+
+// console.log(regularUser.fullname.userfullname.firstname)
+
+const obj1 = {1:"a", 2: "b"}
+const obj2 = {3:"a", 4: "b"}
+
+// const obj3 = {obj1, obj2}
+const obj3 = Object.assign(obj1, obj2) //Object.assign(target,source)
+console.log(obj3)
