@@ -71,9 +71,37 @@ const obj2 = {3:"a", 4: "b"}
 const obj3= {...obj1, ...obj2} //mosly used way
 // console.log(obj3);
 
-console.log(tinderUser);
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+
+
+///////////*************next part **********/
+//de-structure of objects
+
+const course = {
+    coursename : "js in hindi",
+    price: "999",
+    courseInstructor: "himanshi"
+}
+
+//course.courseInstructor
+
+const {courseInstructor : instructor} = course
+const {coursename} = course
+
+
+// console.table([courseInstructor,coursename])
+console.log(instructor)
+
+/////////*********api topic****************/////////////
+// {
+//     "name": "himani",
+//     "coursename" : "js in hindi",
+//     "price" : "free"
+// }
+
+// **********sample api :  "https://randomuser.me/api/"************///////////
