@@ -46,7 +46,7 @@ function loginUserMessage(username){
 
 /********function with objects array ***********************/
 //(..num1) ******/rest and spread
-function calculateCartPrice(val1,val2, ...num1){
+function calculateCartPrice(val1,val2, ...num1){  //HERE IT IS CALLED REST
     return num1;
 }
 
@@ -54,10 +54,27 @@ function calculateCartPrice(val1,val2, ...num1){
 
 const user = {
     username: "hitesh",
-    price:199,
+    price:199
 
 }
 
 function handleObjects(anyObject){
-    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`)
+    console.log(`Username is ${anyObject.username} and 
+    price is ${anyObject.price}`)
 }
+
+// handleObjects(user)
+handleObjects({
+    username: "sam",
+    price:399
+})
+
+const myNewArray = [200,400,200, 600]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+console.log(returnSecondValue(myNewArray))
+console.log(returnSecondValue([300,200,500,700,800]))
+
