@@ -83,10 +83,7 @@ function three()
 {
     console.log("three")
 }
-
-
-
-*/
-
-
+one()
+two()
+three()
 
