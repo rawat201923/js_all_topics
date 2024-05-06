@@ -7,7 +7,7 @@
 //     return item;
 // })
 
-// console.log(values);
+// console.log(values); //   o/p : undefined
 
 
 //********fiter return values
@@ -37,7 +37,7 @@ myNums.forEach((num)=>{
 // const numbers = [1,2,3,4,5,6,7,8]
 
 // const newNumbers = numbers.map((num)=> {
-//      return num + 3 
+//      return num + 10
 // })
 
 // console.log(newNumbers);
@@ -47,7 +47,7 @@ myNums.forEach((num)=>{
 const numbers = [1,2,3,4,5,6,7,8,9,10]
 
 const newNumbers = numbers
-.map((num)=> num * 30)
-.map((num)=>num+1).filter((num)=> num >= 40)
+                    .map((num)=> num * 10)
+                    .map((num)=> num + 1 ).filter((num)=> num >= 40)
 
 console.log(newNumbers);
