@@ -1,0 +1,62 @@
+
+
+<html>
+    <head>
+        <title>
+            Dom Learning
+        </title>
+    </head>
+   
+    <body>
+        <style>
+            body{
+                background-color: #333;
+                color:#fff;
+            }
+        </style>
+        <ul class="language">
+            <li>
+                javascript
+            </li>
+
+        </ul>
+        <script>
+            function addLanguage(langName){
+                const li= document.createElement('li');
+                li.innerHTML=`${langName}`
+                document.querySelector('.language').appendChild(li);
+
+            }
+            addLanguage("python");
+            addLanguage("typescript")
+
+            // optimise method
+
+            function addOptiLanguage(langName){
+                const li=document.createElement('li');
+                li.appendChild(document.createTextNode(langName))
+                document.querySelector('.language').appendChild(li)
+
+            }
+            addLanguage("java")
+
+            //Edit
+            const seclang = document.querySelector('li:nth-child(2)')
+            // seclang.innerHTML = "golang";
+            const newli = document.createElement('li')
+            newli.textContent = "Mojo"
+            seclang.replaceWith(newli)
+
+            //edit other method
+            const firstlang = document.querySelector("li:first-child")
+            firstlang.outerHTML = '<li>Typescript</li>'
+ 
+            //remove
+            const lastlang = document.querySelector("li:last-child")
+            lastlang.remove()
+
+
+        </script>
+       
+    </body>
+</html>
