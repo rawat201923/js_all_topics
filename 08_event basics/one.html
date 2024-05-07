@@ -26,32 +26,44 @@
       //attachEvent()
     //jquery - onclick
 
-    document.getElementById('images').addEventListener('click',(e)=>{
-        console.log("clicked inside the ul");
-    },false) //true or false : true case is capturing mode
+//     document.getElementById('images').addEventListener('click',(e)=>{
+//         // console.log("clicked inside the ul");
+//     },false) //true or false : true case is capturing mode
 
     
-    document.getElementById('owl').addEventListener('click',(e)=>{
-        console.log("owl clicker");
-        e.stopPropagation(); //use to stop bubbling of events
-    },false)
+//     document.getElementById('owl').addEventListener('click',(e)=>{
+//         // console.log("owl clicker");
+//         e.stopPropagation(); //use to stop bubbling of events
+//     },false)
 
-    //type, timestamp, defaultPrevented
-    //target, to element, srcElement, currentTarget,
-    //clientX, clientY,screenY
-    //alt key, contrlkey, shiftkey, keycode
-    //event propogation
+//     //type, timestamp, defaultPrevented
+//     //target, to element, srcElement, currentTarget,
+//     //clientX, clientY,screenY
+//     //alt key, contrlkey, shiftkey, keycode
+//     //event propogation
   
-   document.getElementById('google').addEventListener('click',(e)=>{
-    e.preventDefault();
-    console.log("google clicked");
-    e.stopPropagation(); //use to stop bubbling of events
+//    document.getElementById('google').addEventListener('click',(e)=>{
+//     e.preventDefault();
+//     // console.log("google clicked");
+//     e.stopPropagation(); //use to stop bubbling of events
     
-   },false)
+//    },false)
 
    document.querySelector('ul')
-   .addEventListener('click',()=>{
-    console.log(e);
+   .addEventListener('click',(e)=>{
+    // console.log(e);
+    // console.log(e.target);
+    // console.log(e.target.parentNode);
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG'){
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+    }
+   
+   
+
+
    })
 </script>
 </html>
