@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Currency convertor</title>
-    <link href="style.css" rel="stylesheet" />
+   
  
   </head>
 
@@ -12,7 +12,11 @@
         <br>2. HEADER_RECEIVED send() has been called, and headers and starts are available.
         <br>3. Loading Downloading; responseTest holds partial data.
         <br>4. Done The operstion is complete.
-        <div id="profileImage"></div>
+        <div> 
+            <h1>UserName : <span class="name"></span></h1>
+            <div id="profileImage"></div>
+
+        </div>
       
     </div>
 
@@ -33,18 +37,25 @@
             if(xhr.readyState === 4 && xhr.status === 200){
                
                 const data = JSON.parse(this.responseText);  // Parse the response text as JSON
-                
+                // this use for current context
                 // Extract the profile image URL from the fetched data
-              
+                const name = document.querySelector('.name');
+                name.innerHTML = data.login;
+
                 
                 // Create an image element dynamically
                 const imgElement = document.createElement('img');
+                imgElement.style.height = '200px';
+                imgElement.style.width = '200px';
+
                 
                 // Set the src attribute of the image element to the profile image URL
                 imgElement.src = data.avatar_url;
                 
                 // Append the image element to the div with id 'profileImage'
                 document.getElementById('profileImage').appendChild(imgElement);
+                 
+           
             }
         };
     
@@ -53,6 +64,9 @@
         
         // Send the XMLHttpRequest to fetch the data from the specified URL
         xhr.send();
+        //v8 is debugger for javascript is wrapup by c++ language
+        
+
     </script>
     
   </body>

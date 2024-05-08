@@ -1,30 +1,29 @@
-<html>
-  <head>
-    <title>Currency convertor</title>
-    <link href="style.css" rel="stylesheet" />
- 
-  </head>
+/*
+The Promise object represents the eventual completion (or failure) of 
+an asynchronous operation and its resulting value.
 
-  <body>
-    <div class="container" >
-   
-      
-    </div>
+A Promise is in one of these states:
 
-    <script>
+pending: initial state, neither fulfilled nor rejected.
+fulfilled: meaning that the operation was completed successfully.
+rejected: meaning that the operation failed.
+
+*/
+     
         //PROMISE FUNCTION STORE IN VARIABLE
-        const promiseOne = new Promise(function(resolve, reject){
+const promiseOne = new Promise(function(resolve, reject){
             //do an async task
             //db calls, cryptography, network
             setTimeout(function(){
                 console.log('async task is complete');
-                resolve()
+                resolve();
             },1000)
         })
 
         promiseOne.then(function(){
             console.log("promise consumed");
         })
+
        //PROMISE FUNCTION NOT STORE IN VARIABLE
         new Promise(function(resolve,reject){
             setTimeout(function(){
@@ -54,7 +53,7 @@
             setTimeout(function(){
                 let error = true;
                 if(!error){
-                    resolve({username:"chai", email:"chai@gmail.com"})
+                    resolve({username:"chai", password:"233445"})
 
 
                 }else{
@@ -65,8 +64,7 @@
             })
 
         // promiseForth.then(function(user){})
-        promiseForth
-        .then((user)=>{
+        promiseForth.then((user)=>{
             console.log(user);
             return user.username;
         })
@@ -74,7 +72,7 @@
             console.log(username);
         })
         .catch(function(error){
-            console.log(username);
+            console.log(error);
         })
         .finally(()=> console.log("The promise is resolved or resolved"));
 
@@ -104,22 +102,41 @@
 
             consumePromiseFifth();
 
-            async function allUser(){
-                try{
-                   const response= await fetch('https://jsonplaceholder.typicode.com/users/')
-                //    console.log(response);
-                   const data = await response.json();
-                   console.log(data);
-                }catch{
-                    console.log("e:", error);
-                }
-            }
+            // async function allUser(){
+            //     try{
+            //        const response= await fetch('https://jsonplaceholder.typicode.com/users/')
+            //        console.log(response);
+            //        const data = await response.json();
+            //        console.log(data);
+            //     }catch{
+            //         console.log("e:", error);
+            //     }
+            // }
 
-            allUser();
+            // allUser();
 
-       
+            fetch('https://jsonplaceholder.typicode.com/users/')
+            .then((response)=>{
+                return response.json()
+            })
+            .then((data)=>{
+                console.log(data)
+            })
+            .catch((error)=>console.log(error))
 
-    </script>
-    
-  </body>
-</html>
+
+/* How You Know fetch in javascript
+
+fetch keywords comes on 1 feb 2022 in node.js
+
+fetch : The global fetch() method starts the process of fetching a 
+        resource from the network, returning a promise that is 
+        fulfilled once the response is available.
+
+A fetch() promise only rejects when the request fails, for example, because of a badly-formed request URL or 
+a network error. A fetch() promise does not reject if the server responds with HTTP status codes that indicate errors (404, 504, etc.).
+ Instead, a then() handler must check the Response.ok and/or Response.status properties.
+
+
+
+*/
